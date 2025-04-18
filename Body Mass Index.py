@@ -5,16 +5,20 @@
 
 constantValue = 703
 def gettingInputs():
-    weight = float(input('Enter your weight in pounds: \n'))
-    HeightInches = float(input('Enter your height in inches: \n'))
-    HeightInch = float(input('Enter Another height in inches: \n'))
-    result = float((weight * constantValue) / (HeightInches * HeightInch))
-    print(f'Your BMI is: {result}')
+    try:
+        weight = float(input('Enter your weight in pounds: \n'))
+        HeightInches = float(input('Enter your height in inches: \n'))
+        HeightInch = float(input('Enter Another height in inches: \n'))
+        result = float((weight * constantValue) / (HeightInches * HeightInch))
+        print(f'Your BMI is: {result}')
+    except ValueError:
+        print("Invalid Input")
 
 while True:
+    gettingInputs()
     progress = input('Do you want to continue? y/n where y is "yes" and n is "no"\n')
     if progress.lower() == "y" or progress.lower() == "yes":
-        gettingInputs()
+        continue
     else:
         break
 
